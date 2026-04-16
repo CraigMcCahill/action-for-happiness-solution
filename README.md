@@ -51,5 +51,12 @@ A Daily Check-In web app.
 
 ## AI usage
 
-Used an AI-assisted coding workflow for scaffolding and implementation (backend routes, frontend components, and glue code).
+I used ChatGPT for solution planning and trade-off decisions, and Cursor for implementation assistance and code scaffolding.
 
+AI was most useful for:
+
+- quickly scaffolding Express routes and React component structure
+- wiring the Mailpit/Nodemailer setup
+- accelerating routine glue code
+
+I reviewed and adjusted the generated code throughout. In particular, I refined the overall architecture to keep the solution small enough for the time limit, and I corrected/cleaned parts of the generated code to fit the final data flow and UX.
