@@ -5,7 +5,7 @@
 A Daily Check-In web app.
 
 - Users sign up with their email.
-- The backend sends a Daily Check-In email containing a token link (sent via Mailpit for local testing).
+- The backend sends today's Check-In email containing a token link (sent via Mailpit for local testing).
 - Opening the link takes the user to an interactive 4-step check-in flow:
   - Breathe (acknowledge completion)
   - Reflect

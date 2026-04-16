@@ -11,7 +11,7 @@ export default function SignupPage() {
         <header className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tight">Daily Check-In</h1>
           <p className="text-sm text-slate-400">
-            Sign up with your email to receive an interactive check-in link.
+            Sign up with your email to receive today's check-in.
           </p>
         </header>
 
@@ -19,7 +19,7 @@ export default function SignupPage() {
           <section className="rounded-xl border border-slate-800 bg-slate-900 p-6">
             <h2 className="text-lg font-semibold">Check your inbox</h2>
             <p className="mt-2 text-sm text-slate-300">
-              We sent your Daily Check-In email. Open it to continue the practice.
+              We sent today's Check-In email. Open it to continue the practice.
             </p>
           </section>
         ) : (

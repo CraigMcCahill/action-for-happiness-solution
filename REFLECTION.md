@@ -8,7 +8,7 @@ On the frontend, I kept the structure intentionally light: one custom hook for c
 
 ## Limitations
 
-The biggest limitation is that the "Daily" aspect is not scheduled; the system sends an immediate Daily Check-In email on sign-up rather than recurring scheduled emails. For a production system I would introduce a scheduler or job queue to send recurring check-ins and potentially track user preferences. The current SQLite schema is minimal and has no migrations or constraints beyond a primary key and a basic index; schema evolution and data integrity would need more attention in a real deployment.
+The biggest limitation is that the "Daily" aspect is not scheduled; the system sends an immediate Check-In email for today on sign-up rather than recurring scheduled emails. For a production system I would introduce a scheduler or job queue to send recurring check-ins and potentially track user preferences. The current SQLite schema is minimal and has no migrations or constraints beyond a primary key and a basic index; schema evolution and data integrity would need more attention in a real deployment.
 
 Operationally, there is no authentication or rate limiting around the API endpoints, so a malicious client could create many check-in sessions and emails. Token handling is also fairly minimal: tokens are long UUIDs with an expiry window, but there is no revocation UI or self-service "resend" flow. On the frontend, the check-in experience is keyboard- and screen-reader-friendly in basic ways but lacks more advanced enhancements like focus management between steps and detailed error summaries.
 

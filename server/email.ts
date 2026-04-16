@@ -13,11 +13,11 @@ export type SendCheckInEmailParams = {
 
 function buildEmailContent(publicBaseUrl: string, token: string): { subject: string; text: string; html: string } {
   const linkUrl = `${publicBaseUrl.replace(/\/$/, "")}/checkin/${token}`;
-  const subject = "Your Daily Check-In";
-  const text = `Hi there,\n\nYour Daily Check-In is ready. Open the link below to complete it:\n${linkUrl}\n\nThank you.`;
+  const subject = "Today's Check-In";
+  const text = `Hi there,\n\nToday's Check-In is ready. Open the link below to complete it:\n${linkUrl}\n\nThank you.`;
   const html = `
     <p>Hi there,</p>
-    <p>Your Daily Check-In is ready. Click the link below to complete it:</p>
+    <p>Today's Check-In is ready. Click the link below to complete it:</p>
     <p><a href="${linkUrl}">Complete your check-in</a></p>
     <p>If the link doesn't work, copy and paste this URL into your browser:</p>
     <p><code>${linkUrl}</code></p>
