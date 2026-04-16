@@ -1,5 +1,20 @@
 # Solution
 
+## How to run
+
+- With Docker (recommended for review):
+  - Ensure Docker is running.
+  - From the project root:
+    - `docker compose up --build`
+  - App: `http://localhost:3001`
+  - Mailpit (email inbox): `http://localhost:8025`
+
+- Local dev (with hot reload):
+  - Install dependencies: `npm install`
+  - Run dev servers: `npm run dev`
+    - Vite dev server: `http://localhost:5173`
+    - API runs on `http://localhost:3000` (proxied from Vite for `/api`)
+
 ## What I built
 
 A Daily Check-In web app.
