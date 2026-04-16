@@ -2,11 +2,11 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       PORT: "3000"
       NODE_ENV: "production"
-      PUBLIC_BASE_URL: "http://localhost:3000"
+      PUBLIC_BASE_URL: "http://localhost:3001"
       DATABASE_PATH: "/app/data/checkin.sqlite"
       SMTP_HOST: "mailpit"
       SMTP_PORT: "1025"
