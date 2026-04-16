@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCheckInSession } from "../hooks/useCheckInSession";
+import StepProgress from "./StepProgress";
 import type { CheckInResponses } from "../types/checkIn";
 
 const TOTAL_STEPS = 4;
@@ -29,20 +30,7 @@ export default function CheckInPage() {
   }, [session?.responses]);
 
   const completed = session?.status === "completed";
-  const currentStepLabel = useMemo(() => {
-    switch (step) {
-      case 0:
-        return "Breathe";
-      case 1:
-        return "Reflect";
-      case 2:
-        return "Gratitude";
-      case 3:
-        return "Intention";
-      default:
-        return "Check-in";
-    }
-  }, [step]);
+  const stepLabels = useMemo(() => ["Breathe", "Reflect", "Gratitude", "Intention"], []);
 
   const onSubmit = async () => {
     if (!breatheCompleted) {
@@ -96,12 +84,12 @@ export default function CheckInPage() {
           </button>
 
           {!completed ? (
-            <p className="text-sm text-slate-400">
-              Step {Math.min(step + 1, TOTAL_STEPS)} of {TOTAL_STEPS}: {currentStepLabel}
-            </p>
-          ) : (
-            <span />
-          )}
+            <StepProgress
+              currentStepIndex={step}
+              totalSteps={TOTAL_STEPS}
+              labels={stepLabels}
+            />
+          ) : null}
         </div>
 
         {loading ? <p className="text-sm text-slate-300">Loading check-in...</p> : null}
