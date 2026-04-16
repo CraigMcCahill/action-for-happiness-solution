@@ -1,0 +1,27 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      NODE_ENV: "production"
+      PUBLIC_BASE_URL: "http://localhost:3000"
+      DATABASE_PATH: "/app/data/checkin.sqlite"
+      SMTP_HOST: "mailpit"
+      SMTP_PORT: "1025"
+      SMTP_FROM: "checkin@example.com"
+    volumes:
+      - app-data:/app/data
+    depends_on:
+      - mailpit
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+volumes:
+  app-data:
+

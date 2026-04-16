@@ -1,9 +1,15 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CheckInPage from "./components/CheckInPage";
+import SignupPage from "./components/SignupPage";
+
 export default function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 text-slate-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Happiness Solution</h1>
-      </div>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignupPage />} />
+        <Route path="/checkin/:token" element={<CheckInPage />} />
+        <Route path="*" element={<SignupPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

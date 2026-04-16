@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts"],"version":"6.0.2"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/checkinpage.tsx","./src/components/signupform.tsx","./src/components/signuppage.tsx","./src/hooks/usecheckinsession.ts","./src/lib/api.ts","./src/lib/email.ts","./src/types/checkin.ts"],"version":"6.0.2"}
